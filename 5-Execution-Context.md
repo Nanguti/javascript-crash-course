@@ -2,13 +2,11 @@
 
 ## 05-execution-con/
 
-### execution-con.md
-
-**Understanding Execution Con, Call Stack, and Event Loop**
+### Understanding Execution Con, Call Stack, and Event Loop
 
 In JavaScript, the execution con is the environment in which the code is evaluated and executed. It contains information about the variables, functions, and objects that are accessible at any given point in time.
 
-#### Types of Execution Cons:
+#### Types of Execution Cons
 
 1. **Global Execution Con:** The default con where all JavaScript code runs initially.
 2. **Function Execution Con:** Created whenever a function is invoked.
@@ -18,42 +16,45 @@ In JavaScript, the execution con is the environment in which the code is evaluat
 
 The call stack is a data structure that keeps track of function calls in a last-in-first-out (LIFO) manner.
 
+```js
 function first() {
-second();
-console.log("First function");
+  second();
+  console.log("First function");
 }
 function second() {
-console.log("Second function");
+  console.log("Second function");
 }
 first();
 // Output:
 // Second function
 // First function
+```
 
 #### Event Loop
 
 The event loop allows JavaScript to perform non-blocking operations by using callbacks, promises, and async functions.
 
+```js
 console.log("Start");
 setTimeout(() => {
-console.log("Timeout");
+  console.log("Timeout");
 }, 0);
 console.log("End");
 // Output:
 // Start
 // End
 // Timeout
+```
 
-### hoisting.md
-
-**Hoisting in JavaScript**
+### Hoisting in JavaScript
 
 Hoisting is a JavaScript mechanism where variables and function declarations are moved to the top of their containing scope during the compilation phase.
 
-#### Variable Hoisting:
+#### Variable Hoisting
 
 Variables declared with `var` are hoisted but initialized with `undefined`.
 
+```js
 console.log(x); // Outputs: undefined
 var x = 5;
 console.log(x); // Outputs: 5
@@ -62,107 +63,118 @@ Variables declared with `let` and `const` are also hoisted but remain uninitiali
 
 console.log(y); // ReferenceError: Cannot access 'y' before initialization
 let y = 10;
+```
 
-#### Function Hoisting:
+#### Function Hoisting
 
 Function declarations are fully hoisted, allowing you to call them before they appear in the code.
 
+```js
 console.log(sayHello()); // Outputs: Hello!
 function sayHello() {
-return "Hello!";
+  return "Hello!";
 }
+```
 
 However, function expressions (including arrow functions) are not hoisted in the same way.
 
+```js
 console.log(sayGoodbye()); // TypeError: sayGoodbye is not a function
-var sayGoodbye = function() {
-return "Goodbye!";
+var sayGoodbye = function () {
+  return "Goodbye!";
 };
+```
 
-### this-keyword.md
-
-**Understanding `this`**
+### Understanding `this`
 
 The value of `this` in JavaScript depends on how a function is called. It can refer to different objects based on the con.
 
-#### Global Con:
+#### Global Con
 
 In the global execution con (outside any function), `this` refers to the global object (`window` in browsers).
 
+```js
 console.log(this); // Outputs: Window object (in browsers)
+```
 
-#### Function Con:
+#### Function Con
 
 In a regular function, `this` refers to the global object unless it is called as a method of an object.
 
+```js
 function showThis() {
-console.log(this);
+  console.log(this);
 }
 showThis(); // Outputs: Window object (in browsers)
 const obj = {
-name: "Alice",
-showName: function() {
-console.log(this.name);
-}
+  name: "Alice",
+  showName: function () {
+    console.log(this.name);
+  },
 };
 obj.showName(); // Outputs: Alice
+```
 
-#### Arrow Functions:
+#### Arrow Functions
 
 Arrow functions do not have their own `this`. They inherit `this` from the parent scope.
 
+```js
 const obj2 = {
-name: "Bob",
-showName: () => {
-console.log(this.name); // 'this' refers to the global object here
-}
+  name: "Bob",
+  showName: () => {
+    console.log(this.name); // 'this' refers to the global object here
+  },
 };
 obj2.showName(); // Outputs: undefined (if 'name' is not defined globally)
+```
 
-### closure-con.md
-
-**Closures in Con of Execution**
+### Closures in Con of Execution
 
 A closure is a function that retains access to its lexical scope even when the function is executed outside that scope. Closures are created every time a function is created.
 
-#### Example of Closure:
+#### Example of Closure
 
+```js
 function outerFunction() {
-let outerVar = "I am outside!";
+  let outerVar = "I am outside!";
 
-return function innerFunction() {
-console.log(outerVar); // Accesses outerVar from outerFunction's scope
-};
+  return function innerFunction() {
+    console.log(outerVar); // Accesses outerVar from outerFunction's scope
+  };
 }
 const closureFunc = outerFunction();
 closureFunc(); // Outputs: I am outside!
+```
 
-#### Practical Use Case:
+#### Practical Use Case
 
 Closures are often used to create private variables or functions.
 
+```js
 function createCounter() {
-let count = 0; // Private variable
+  let count = 0; // Private variable
 
-return {
-increment: function() {
-count++;
-return count;
-},
-decrement: function() {
-count--;
-return count;
-},
-getCount: function() {
-return count;
-}
-};
+  return {
+    increment: function () {
+      count++;
+      return count;
+    },
+    decrement: function () {
+      count--;
+      return count;
+    },
+    getCount: function () {
+      return count;
+    },
+  };
 }
 const counter = createCounter();
 console.log(counter.increment()); // Outputs: 1
 console.log(counter.increment()); // Outputs: 2
 console.log(counter.getCount()); // Outputs: 2
 console.log(counter.decrement()); // Outputs: 1
+```
 
 ### Conclusion
 

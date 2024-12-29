@@ -4,33 +4,36 @@
 
 ### objects-and-arrays.md
 
-**Working with Objects and Arrays**
+#### Working with Objects and Arrays
 
 In JavaScript, objects and arrays are fundamental data structures.
 
-#### Objects
+##### Objects
 
 Objects are collections of key-value pairs.
 
+```js
 // Creating an object
 let person = {
-name: "Alice",
-age: 30,
-isStudent: false,
-greet: function() {
-console.log("Hello, my name is " + this.name);
-}
+  name: "Alice",
+  age: 30,
+  isStudent: false,
+  greet: function () {
+    console.log("Hello, my name is " + this.name);
+  },
 };
 // Accessing object properties
 console.log(person.name); // Outputs: Alice
-console.log(person['age']); // Outputs: 30
+console.log(person["age"]); // Outputs: 30
 // Calling a method
 person.greet(); // Outputs: Hello, my name is Alice
+```
 
-#### Arrays
+##### Arrays
 
 Arrays are ordered lists of values.
 
+```js
 // Creating an array
 let colors = ["red", "green", "blue"];
 // Accessing array elements
@@ -38,126 +41,145 @@ console.log(colors); // Outputs: red
 // Adding an element to the array
 colors.push("yellow");
 console.log(colors); // Outputs: ["red", "green", "blue", "yellow"]
+```
 
-### scope-and-closures.md
-
-**Scope and Closures**
+### scope-and-closures
 
 Scope determines the accessibility of variables in JavaScript.
 
-#### Scope Types:
+#### Scope Types
 
 1. **Global Scope:** Variables declared outside any function.
 2. **Function Scope:** Variables declared within a function.
 3. **Block Scope:** Variables declared with `let` or `const` within a block (e.g., if statements, loops).
 
+```js
 let globalVar = "I am global";
 function myFunction() {
-let functionVar = "I am local";
-console.log(globalVar); // Accessible
+  let functionVar = "I am local";
+  console.log(globalVar); // Accessible
 }
 myFunction();
 console.log(functionVar); // ReferenceError: functionVar is not defined
+```
 
 #### Closures
 
 A closure is a function that retains access to its lexical scope, even when the function is executed outside that scope.
 
+```js
 function outerFunction() {
-let outerVar = "I am from outer function";
+  let outerVar = "I am from outer function";
 
-return function innerFunction() {
-console.log(outerVar); // Accesses outerVar from outerFunction's scope
-};
+  return function innerFunction() {
+    console.log(outerVar); // Accesses outerVar from outerFunction's scope
+  };
 }
 const innerFunc = outerFunction();
 innerFunc(); // Outputs: I am from outer function
+```
 
-### dom-manipulation.md
-
-**Introduction to the DOM**
+### dom-manipulation
 
 The Document Object Model (DOM) represents the structure of a document (like HTML) as a tree of objects. JavaScript can manipulate the DOM to change the content and structure of web pages.
 
-#### Selecting Elements:
+#### Selecting Elements
 
+```js
 // Select an element by ID
 let heading = document.getElementById("myHeading");
 // Select elements by class name
 let items = document.getElementsByClassName("item");
 // Select elements using querySelector
 let firstItem = document.querySelector(".item");
+```
 
-#### Modifying Elements:
+#### Modifying Elements
 
+```js
 // Change content
 heading.Content = "New Heading";
 // Change styles
 heading.style.color = "blue";
+```
 
-#### Adding Elements:
+#### Adding Elements
 
+```js
 // Create a new element
 let newElement = document.createElement("p");
 newElement.Content = "This is a new paragraph.";
 // Append the new element to the body
 document.body.appendChild(newElement);
+```
 
-### events.md
-
-**Handling Events and Event Listeners**
+### Handling Events and Event Listeners
 
 Events are actions that occur in the browser, such as clicks, key presses, or mouse movements. You can respond to these events using event listeners.
 
-#### Adding Event Listeners:
+#### Adding Event Listeners
 
+```js
 // Select an element
 let button = document.querySelector("button");
 // Add a click event listener
-button.addEventListener("click", function() {
-alert("Button was clicked!");
+button.addEventListener("click", function () {
+  alert("Button was clicked!");
 });
+```
 
-#### Removing Event Listeners:
+#### Removing Event Listeners
 
+```js
 function handleClick() {
-alert("Button was clicked!");
+  alert("Button was clicked!");
 }
 button.addEventListener("click", handleClick);
 // Later in your code...
 button.removeEventListener("click", handleClick);
+```
 
-### array-methods.md
-
-**Array Methods**
+### array-methods
 
 JavaScript provides several built-in methods for manipulating arrays.
 
 #### Common Array Methods:
 
 - **forEach:** Executes a provided function once for each array element.
-  let numbers = [1, 2, 3];
-  numbers.forEach(function(num) {
+
+```js
+let numbers = [1, 2, 3];
+numbers.forEach(function (num) {
   console.log(num); // Outputs: 1, 2, 3
-  });
+});
+```
 
 - **map:** Creates a new array populated with the results of calling a provided function on every element in the calling array.
+
+```js
   let doubled = numbers.map(function(num) {
   return num \* 2;
   });
   console.log(doubled); // Outputs: [2, 4, 6]
+```
 
 - **filter:** Creates a new array with all elements that pass the test implemented by the provided function.
-  let evenNumbers = numbers.filter(function(num) {
+
+```js
+let evenNumbers = numbers.filter(function (num) {
   return num % 2 === 0;
-  });
-  console.log(evenNumbers); // Outputs: []
+});
+console.log(evenNumbers); // Outputs: []
+```
 
 - **reduce:** Executes a reducer function on each element of the array, resulting in a single output value.
-  let sum = numbers.reduce(function(total, num) {
+
+```js
+let sum = numbers.reduce(function (total, num) {
   return total + num;
-  }, 0);
-  console.log(sum); // Outputs: 6
+}, 0);
+console.log(sum); // Outputs: 6
+```
 
 ### Conclusion
 
