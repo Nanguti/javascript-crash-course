@@ -1,8 +1,6 @@
 # JavaScript Introduction
 
-## 00-introduction/
-
-### Introduction to JavaScript\*\*
+### Introduction to JavaScript
 
 JavaScript is a high-level, dynamic, untyped, and interpreted programming language. It is one of the core technologies of the World Wide Web, alongside HTML and CSS. JavaScript enables interactive web pages and is an essential part of web applications.
 
@@ -12,7 +10,7 @@ In this section, we will cover:
 - Key features and benefits
 - The role of JavaScript in modern web development
 
-### Setting Up the Development Environment\*\*
+### Setting Up the Development Environment
 
 To start programming in JavaScript, you need to set up your development environment. Here’s how you can do it:
 
@@ -53,7 +51,7 @@ To start programming in JavaScript, you need to set up your development environm
 5. **Create Your JavaScript File:**
    - Create a `script.js` file where you will write your JavaScript code.
 
-### What is JavaScript and Its Role in Web Development\*\*
+### What is JavaScript and Its Role in Web Development
 
 JavaScript is a versatile programming language that allows developers to create dynamic and interactive web content. It was originally developed by Brendan Eich in 1995 and has since become a standard for client-side scripting on the web.
 

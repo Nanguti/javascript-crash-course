@@ -1,7 +1,5 @@
 # JavaScript Execution Con
 
-## 05-execution-con/
-
 ### Understanding Execution Con, Call Stack, and Event Loop
 
 In JavaScript, the execution con is the environment in which the code is evaluated and executed. It contains information about the variables, functions, and objects that are accessible at any given point in time.

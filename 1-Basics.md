@@ -1,10 +1,6 @@
 # JavaScript Basics
 
-## 01-basics/
-
-### variables-and-data-types
-
-#### Variables and Data Types
+### Variables and Data Types
 
 In JavaScript, variables are used to store data values. There are three ways to declare variables: `var`, `let`, and `const`.
 

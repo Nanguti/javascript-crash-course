@@ -1,7 +1,5 @@
 # JavaScript Intermediate Concepts
 
-## 03-intermediate/
-
 ### Asynchronous JavaScript: Callbacks, Promises, and async/await
 
 JavaScript is single-threaded, meaning it can only execute one operation at a time. Asynchronous programming allows you to perform tasks without blocking the execution of code.

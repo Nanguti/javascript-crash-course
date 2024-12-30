@@ -1,14 +1,10 @@
 # JavaScript Core Concepts
 
-## 02-core-concepts/
-
-### objects-and-arrays.md
-
-#### Working with Objects and Arrays
+### Working with Objects and Arrays
 
 In JavaScript, objects and arrays are fundamental data structures.
 
-##### Objects
+#### Objects
 
 Objects are collections of key-value pairs.
 

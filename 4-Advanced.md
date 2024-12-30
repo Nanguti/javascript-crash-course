@@ -1,7 +1,5 @@
 # JavaScript Advanced Concepts
 
-## 04-advanced/
-
 ### Higher-Order Functions and Functional Programming
 
 Higher-order functions are functions that take other functions as arguments or return them as results. They are a key feature of functional programming.

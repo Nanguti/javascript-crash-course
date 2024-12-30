@@ -1,8 +1,6 @@
 # JavaScript Projects
 
-## 07-projects/
-
-### Project: To-Do List App (Beginner Level)\*\*
+### Project: To-Do List App (Beginner Level)
 
 In this project, you will create a simple To-Do List app that allows users to add, remove, and mark tasks as complete. This project will help you practice basic JavaScript concepts, DOM manipulation, and event handling.
 
